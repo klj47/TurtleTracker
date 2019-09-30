@@ -13,14 +13,11 @@ fileName = "data/raw/SaraNoHeader.txt"
 # Open the file as a read-only file object
 fileObj = open(fileName, 'r')
 
-# Read in all lines in the text file into a list variable
-lineList = fileObj.readlines()
+# Read data
+lineString = fileObj.readline()
 
-# Closes the file object (now that we have all we need)
-fileObj.close()
-
-# Extract the first line from the lineList
-for lineString in lineList:
+# While loop, will execute if lineString has any characters at all
+while lineString:
     
     # Use the split command to parse the items in lineString into a list object
     lineData = lineString.split("\t")
@@ -35,5 +32,7 @@ for lineString in lineList:
     obsLon = lineData[6] # Observation Longitude
     
     # Print information to the user
-    print ("Record {0} indicates Sara was seen at {1}N and {2}W on {3}".
-           format(recordID,obsLat,obsLon,obsDate))
+    print ("Record {0} indicates Sara was seen at {1}N and {2}W on {3}".format(recordID,obsLat,obsLon,obsDate))
+    
+    # Go to next line
+    lineString = fileObj.readline()
