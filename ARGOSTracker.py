@@ -24,3 +24,4 @@ obsLon = lineData[6]                # Observation Longitude
 
 # Print information to the use
 print ("Record {0} indicates Sara was seen at {1}N and {2}W on {3}".format(recordID, obsLat,obsLon,obsDate))
+
